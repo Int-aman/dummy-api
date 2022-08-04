@@ -17,7 +17,7 @@ public class CreateUserTests {
                 .body("{\n" +
                         "    \"firstName\" : \"Ram\",\n" +
                         "    \"lastName\" : \"Lal\",\n" +
-                        "    \"email\" : \"ramsszsdwal@gmail.com\"\n" +
+                        "    \"email\" : \"ramszzsdwal@gmail.com\"\n" +
                         "}")
                 .when()
                     .post("https://dummyapi.io/data/v1/user/create")
