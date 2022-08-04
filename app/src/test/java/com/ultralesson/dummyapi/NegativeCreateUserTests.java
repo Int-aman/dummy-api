@@ -5,11 +5,10 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class CreateUserTests {
+public class NegativeCreateUserTests {
 
     @Test
-    public void shouldCreateUser(){
-
+    public void shouldNotAllowToCreateUserWithInvalidEmail(){
         given()
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
@@ -17,12 +16,12 @@ public class CreateUserTests {
                 .body("{\n" +
                         "    \"firstName\" : \"Ram\",\n" +
                         "    \"lastName\" : \"Lal\",\n" +
-                        "    \"email\" : \"ramsszsdwal@gmail.com\"\n" +
+                        "    \"email\" : \"ramlal@gmail.com\"\n" +
                         "}")
                 .when()
-                    .post("https://dummyapi.io/data/v1/user/create")
+                .post("https://dummyapi.io/data/v1/user/create")
                 .then()
-                    .log().body()
-                    .statusCode(200);
+                .log().body()
+                .statusCode(400);
     }
 }
