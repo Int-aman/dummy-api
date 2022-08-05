@@ -11,7 +11,7 @@ public class DeletePostTest {
         given()
                 .header("app-id","62ec2b3c9e703f23bf6fc8a3")
                 .when()
-                    .delete("https://dummyapi.io/data/v1/post/62ec969929a3abac15058aa4")
+                    .delete("https://dummyapi.io/data/v1/post/62ecc16b98146a0dff3dfdfa")
                 .then()
                     .statusCode(200)
                     .log().body();
