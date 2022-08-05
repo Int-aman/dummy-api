@@ -5,22 +5,24 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class CreateUserTests {
+public class CreatePostTests {
 
     @Test
-    public void shouldCreateUser(){
+    public void shouldCreatePost(){
 
         given()
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
                 .header("app-id","62ec2b3c9e703f23bf6fc8a3")
                 .body("{\n" +
-                        "    \"firstName\" : \"Ram\",\n" +
-                        "    \"lastName\" : \"Lal\",\n" +
-                        "    \"email\" : \"ranazzsdwal@gmail.com\"\n" +
+                        "    \"text\" : \"this is the second post\",\n" +
+                        "    \"image\" : \"sample1url.com\",\n" +
+                        "    \"likes\" : 2,\n" +
+                        "    \"tags\" : [\"water\"],\n" +
+                        "    \"owner\" : \"62ec877286168f6c090dfd6d\"\n" +
                         "}")
                 .when()
-                    .post("https://dummyapi.io/data/v1/user/create")
+                    .post("https://dummyapi.io/data/v1/post/create")
                 .then()
                     .log().body()
                     .statusCode(200);
