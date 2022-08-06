@@ -16,7 +16,7 @@ public class NegativeCreateUserTests {
     public void beforeClass(){
         usersService = new UsersService();
     }
-    @Test
+    @Test(groups = {"smoke"} )
     public void shouldNotAllowToCreateUserWithInvalidEmail(){
 
         //Arrange

@@ -19,7 +19,7 @@ public class CreatePostTests {
         postService = new PostService();
     }
 
-    @Test
+    @Test(groups = {"sanity"} )
     public void shouldCreatePost(){
 
         //Arrange

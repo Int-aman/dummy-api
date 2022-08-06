@@ -6,7 +6,7 @@ import static io.restassured.RestAssured.given;
 
 public class GetPostTests {
 
-    @Test
+    @Test(groups = {"smoke"} )
     public void getPostById(){
         given()
                     .header("app-id","62ec2b3c9e703f23bf6fc8a3")

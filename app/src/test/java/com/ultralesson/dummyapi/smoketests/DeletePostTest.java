@@ -6,7 +6,7 @@ import static io.restassured.RestAssured.given;
 
 public class DeletePostTest {
 
-    //@Test
+    //@Test(groups = {"smoke"} )
     public void shouldDeletePost(){
         //  To run this test we need to create a new post everytime and that integration test is
         //  implemented separately, so this test is disabled.

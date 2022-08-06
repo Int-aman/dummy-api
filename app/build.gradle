@@ -42,3 +42,19 @@ tasks.named('test') {
     // Use TestNG for unit tests.
     useTestNG()
 }
+
+task smoketests(type: Test) {
+    group "Custom task"
+    description "run smoke tests"
+    useTestNG() {
+        includeGroups 'smoke'
+    }
+}
+
+task sanitytests(type: Test) {
+    group "Custom task"
+    description "run sanity tests"
+    useTestNG() {
+        includeGroups 'sanity'
+    }
+}

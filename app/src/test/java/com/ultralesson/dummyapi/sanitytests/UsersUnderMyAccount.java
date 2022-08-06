@@ -6,7 +6,7 @@ import static io.restassured.RestAssured.given;
 
 public class UsersUnderMyAccount {
 
-    @Test
+    @Test(groups = {"sanity"} )
     public void shouldGetAllUsersUnderMyAccount(){
         given()
                 .header("app-id","62ec2b3c9e703f23bf6fc8a3")

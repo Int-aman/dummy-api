@@ -21,7 +21,7 @@ public class CreateUserTests {
         usersService = new UsersService();
     }
 
-    @Test
+    @Test(groups = {"sanity"} )
     public void shouldCreateUser(){
 
         //Arrange
