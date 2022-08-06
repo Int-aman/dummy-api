@@ -1,4 +1,4 @@
-package com.ultralesson.dummyapi;
+package com.ultralesson.dummyapi.smoketests;
 
 import com.ultralesson.dummyapi.users.UsersClient;
 import com.ultralesson.dummyapi.users.create.CreateUserRequestBody;

@@ -1,4 +1,4 @@
-package com.ultralesson.dummyapi;
+package com.ultralesson.dummyapi.smoketests;
 
 import org.testng.annotations.Test;
 

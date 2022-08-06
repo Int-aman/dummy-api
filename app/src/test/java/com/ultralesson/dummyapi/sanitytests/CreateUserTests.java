@@ -1,4 +1,4 @@
-package com.ultralesson.dummyapi;
+package com.ultralesson.dummyapi.sanitytests;
 
 import com.ultralesson.dummyapi.users.UsersClient;
 import com.ultralesson.dummyapi.users.create.CreateUserRequestBody;
@@ -35,21 +35,5 @@ public class CreateUserTests {
 
         //Assert
         createUserResponse.assertUser(requestBody);
-
-
-//        given()
-//                .accept(ContentType.JSON)
-//                .contentType(ContentType.JSON)
-//                .header("app-id","62ec2b3c9e703f23bf6fc8a3")
-//                .body("{\n" +
-//                        "    \"firstName\" : \"Ram\",\n" +
-//                        "    \"lastName\" : \"Lal\",\n" +
-//                        "    \"email\" : \"ranqzsdwal@gmail.com\"\n" +
-//                        "}")
-//                .when()
-//                    .post("https://dummyapi.io/data/v1/user/create")
-//                .then()
-//                    .log().body()
-//                    .statusCode(200);
     }
 }
