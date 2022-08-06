@@ -28,11 +28,11 @@ public class NegativeCreateUserTests {
                 .email("ramlal@gmail.com").build();
 
         //Act
-        CreateErrorResponse errorResponse =usersClient.createUserExpectingResponse(requestBody);
+        CreateErrorResponse errorResponse = usersClient.createUserExpectingResponse(requestBody);
 
         //Assert
         assertEquals(errorResponse.getStatusCode(), 400);
-        errorResponse.assertHasError("email", "Email already used");
+        errorResponse.assertHasError("Email already used");
 //        given()
 //                .accept(ContentType.JSON)
 //                .contentType(ContentType.JSON)

@@ -6,7 +6,7 @@ import static io.restassured.RestAssured.given;
 
 public class DeletePostTest {
 
-    @Test
+    //@Test
     public void shouldDeletePost(){
         given()
                 .header("app-id","62ec2b3c9e703f23bf6fc8a3")

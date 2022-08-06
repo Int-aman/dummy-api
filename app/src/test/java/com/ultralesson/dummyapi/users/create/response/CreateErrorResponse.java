@@ -14,23 +14,19 @@ public class CreateErrorResponse {
     @Setter
     private int statusCode;
     private String error;
-    @JsonProperty("data")
-    private List<Data> dataList;
+    private Data data;
 
-    public void assertHasError(String field, String message){
-        int size = dataList.stream()
-                .filter(data -> data.getField().equals(field))
-                .filter(data -> data.getMessage().equals(message))
-                .collect(Collectors.toList())
-                .size();
+    public void assertHasError(String message){
+        Assert.assertEquals(data.getEmail(),message);
 
-        Assert.assertEquals(size, 1);
     }
 
     @Getter
     public static class Data {
-        private String field;
-        private String message;
+        private String email;
+        private String lastName;
+        private String firstName;
+
     }
 
 }
