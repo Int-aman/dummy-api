@@ -48,8 +48,8 @@ jobs:
       - name: Build with gradle
         run: ./gradlew test
 
-      - name: Upload API Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: api_tests
-          path: app/build/reports
+#      - name: Upload API Artifacts
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: api_tests
+#          path: app/build/reports
