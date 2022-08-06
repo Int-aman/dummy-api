@@ -1,23 +1,20 @@
 package com.ultralesson.dummyapi.smoketests;
 
 import com.ultralesson.dummyapi.users.UsersClient;
+import com.ultralesson.dummyapi.users.UsersService;
 import com.ultralesson.dummyapi.users.create.CreateUserRequestBody;
 import com.ultralesson.dummyapi.users.create.response.CreateErrorResponse;
-import com.ultralesson.dummyapi.users.create.response.CreateUserResponse;
-import io.restassured.http.ContentType;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
 
 public class NegativeCreateUserTests {
 
-    private UsersClient usersClient;
+    private UsersService usersService;
     @BeforeClass
     public void beforeClass(){
-        usersClient = new UsersClient();
+        usersService = new UsersService();
     }
     @Test
     public void shouldNotAllowToCreateUserWithInvalidEmail(){
@@ -28,7 +25,7 @@ public class NegativeCreateUserTests {
                 .email("ramlal@gmail.com").build();
 
         //Act
-        CreateErrorResponse errorResponse = usersClient.createUserExpectingResponse(requestBody);
+        CreateErrorResponse errorResponse = usersService.createUserExpectingResponse(requestBody);
 
         //Assert
         assertEquals(errorResponse.getStatusCode(), 400);

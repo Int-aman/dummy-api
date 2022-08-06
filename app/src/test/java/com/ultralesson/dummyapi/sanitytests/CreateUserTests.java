@@ -1,6 +1,7 @@
 package com.ultralesson.dummyapi.sanitytests;
 
 import com.ultralesson.dummyapi.users.UsersClient;
+import com.ultralesson.dummyapi.users.UsersService;
 import com.ultralesson.dummyapi.users.create.CreateUserRequestBody;
 import com.ultralesson.dummyapi.users.create.response.CreateUserResponse;
 import io.restassured.http.ContentType;
@@ -13,11 +14,11 @@ import static io.restassured.RestAssured.given;
 
 public class CreateUserTests {
 
-    private UsersClient usersClient;
+    private UsersService usersService;
 
     @BeforeClass
     public void beforeClass(){
-        usersClient = new UsersClient();
+        usersService = new UsersService();
     }
 
     @Test
@@ -31,7 +32,7 @@ public class CreateUserTests {
                         .email(email).build();
 
         //Act
-        CreateUserResponse createUserResponse = usersClient.createUser(requestBody);
+        CreateUserResponse createUserResponse = usersService.createUser(requestBody);
 
         //Assert
         createUserResponse.assertUser(requestBody);

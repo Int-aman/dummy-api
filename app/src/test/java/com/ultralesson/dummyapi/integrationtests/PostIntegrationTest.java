@@ -3,6 +3,7 @@ package com.ultralesson.dummyapi.integrationtests;
 import com.ultralesson.dummyapi.users.post.PostClient;
 import com.ultralesson.dummyapi.users.post.PostRequest;
 import com.ultralesson.dummyapi.users.post.PostResponse;
+import com.ultralesson.dummyapi.users.post.PostService;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -10,11 +11,11 @@ import static io.restassured.RestAssured.given;
 
 public class PostIntegrationTest {
 
-    private PostClient postClient;
+    private PostService postService;
 
     @BeforeClass
     public void beforeClass(){
-        postClient = new PostClient();
+        postService = new PostService();
     }
 
     @Test
@@ -29,7 +30,7 @@ public class PostIntegrationTest {
                 .build();
 
         //Act
-        PostResponse postResponse = postClient.createPost(postBody);
+        PostResponse postResponse = postService.createPost(postBody);
         postResponse.assertPost(postBody);
         String id = postResponse.getId();
 
@@ -44,7 +45,7 @@ public class PostIntegrationTest {
                     .log().body();
 
         //Asserting that we deleted the post
-        postClient.confirmPostDeleted(id);
+        postService.confirmPostDeleted(id);
 
     }
 }

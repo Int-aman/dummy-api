@@ -3,6 +3,7 @@ package com.ultralesson.dummyapi.sanitytests;
 import com.ultralesson.dummyapi.users.post.PostClient;
 import com.ultralesson.dummyapi.users.post.PostRequest;
 import com.ultralesson.dummyapi.users.post.PostResponse;
+import com.ultralesson.dummyapi.users.post.PostService;
 import io.restassured.http.ContentType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -11,11 +12,11 @@ import static io.restassured.RestAssured.given;
 
 public class CreatePostTests {
 
-    private PostClient postClient;
+    private PostService postService;
 
     @BeforeClass
     public void beforeClass(){
-        postClient = new PostClient();
+        postService = new PostService();
     }
 
     @Test
@@ -30,7 +31,7 @@ public class CreatePostTests {
                 .build();
 
         //Act
-        PostResponse postResponse = postClient.createPost(postBody);
+        PostResponse postResponse = postService.createPost(postBody);
 
         //Assert
         postResponse.assertPost(postBody);

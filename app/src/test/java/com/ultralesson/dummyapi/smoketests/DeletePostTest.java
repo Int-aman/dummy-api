@@ -8,6 +8,8 @@ public class DeletePostTest {
 
     //@Test
     public void shouldDeletePost(){
+        //  To run this test we need to create a new post everytime and that integration test is
+        //  implemented separately, so this test is disabled.
         given()
                 .header("app-id","62ec2b3c9e703f23bf6fc8a3")
                 .when()

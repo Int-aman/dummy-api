@@ -10,18 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class UsersClient {
 
-    public CreateUserResponse createUser(CreateUserRequestBody body){
-        Response response = create(body);
-        CreateUserResponse createUserResponse = response.as(CreateUserResponse.class);
-        createUserResponse.setStatusCode(response.statusCode());
-        return createUserResponse;
-    }
-    public CreateErrorResponse createUserExpectingResponse(CreateUserRequestBody body){
-        Response response = create(body);
-        CreateErrorResponse errorResponse = response.as(CreateErrorResponse.class);
-        errorResponse.setStatusCode(response.statusCode());
-        return errorResponse;
-    }
+
     public Response create(CreateUserRequestBody body){
         Response response =
                 given()
