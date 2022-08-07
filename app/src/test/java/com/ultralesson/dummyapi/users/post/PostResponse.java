@@ -1,7 +1,5 @@
 package com.ultralesson.dummyapi.users.post;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.ultralesson.dummyapi.users.create.CreateUserRequestBody;
 import lombok.Getter;
 import lombok.Setter;
 import org.testng.Assert;

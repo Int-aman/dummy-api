@@ -3,7 +3,6 @@ package com.ultralesson.dummyapi.users.post;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import lombok.Getter;
-import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 

@@ -1,16 +1,12 @@
 package com.ultralesson.dummyapi.users;
 
 import com.ultralesson.dummyapi.users.create.CreateUserRequestBody;
-import com.ultralesson.dummyapi.users.create.response.CreateUserResponse;
-import com.ultralesson.dummyapi.users.create.response.CreateErrorResponse;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
 public class UsersClient {
-
-
     public Response create(CreateUserRequestBody body){
         Response response =
                 given()

@@ -3,9 +3,9 @@ package com.ultralesson.dummyapi.users.create.response;
 import com.ultralesson.dummyapi.users.create.CreateUserRequestBody;
 import lombok.Getter;
 import lombok.Setter;
-import org.testng.Assert;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
 
 @Getter
 public class CreateUserResponse {
