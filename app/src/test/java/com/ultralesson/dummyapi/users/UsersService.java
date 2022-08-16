@@ -18,5 +18,7 @@ public class UsersService {
         CreateErrorResponse errorResponse = response.as(CreateErrorResponse.class);
         errorResponse.setStatusCode(response.statusCode());
         return errorResponse;
+
+        // test comment
     }
 }
